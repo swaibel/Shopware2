@@ -13,7 +13,7 @@ FROM            dbo.Categories INNER JOIN
                          dbo.RO_Repair_Orders ON dbo.RO_Services.P_results_id = dbo.RO_Repair_Orders.id INNER JOIN
                          dbo.RO_Parts ON dbo.RO_Services.id = dbo.RO_Parts.P_results_services_id ON dbo.Categories.id = dbo.RO_Services.category_id INNER JOIN
                          dbo.Shops ON dbo.RO_Repair_Orders.shop_id = dbo.Shops.id
-WHERE        (dbo.RO_Repair_Orders.closed_at > '2021-07-18')
+WHERE        (dbo.RO_Repair_Orders.closed_at > '2021-07-17')
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
