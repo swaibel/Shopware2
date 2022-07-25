@@ -9,6 +9,9 @@ SELECT        dbo.RO_Repair_Orders.id AS P_results_id, trim(dbo.Customers.first_
 FROM            dbo.RO_Repair_Orders INNER JOIN
                          dbo.Customers ON dbo.RO_Repair_Orders.customer_id = dbo.Customers.id LEFT OUTER JOIN
                          dbo.Vehicles ON dbo.RO_Repair_Orders.vehicle_id = dbo.Vehicles.id
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Creates descriptions for AR invoices', 'SCHEMA', N'dbo', 'VIEW', N'vw_ARDesc', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

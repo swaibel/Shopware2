@@ -11,6 +11,9 @@ FROM            dbo.RO_Repair_Orders INNER JOIN
                          dbo.RO_Parts ON dbo.RO_Repair_Orders.id = dbo.RO_Parts.P_results_id INNER JOIN
                          dbo.Shops ON dbo.RO_Repair_Orders.shop_id = dbo.Shops.id
 WHERE        (dbo.RO_Repair_Orders.closed_at > '2021-07-18')
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Calculates the Cost of Goods', 'SCHEMA', N'dbo', 'VIEW', N'vw_COGS', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

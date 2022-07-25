@@ -14,6 +14,9 @@ FROM            dbo.RO_Repair_Orders INNER JOIN
                          dbo.RO_Labors ON dbo.RO_Services.id = dbo.RO_Labors.P_results_services_id INNER JOIN
                          dbo.Staff ON dbo.RO_Labors.technician_id = dbo.Staff.id
 WHERE        (dbo.RO_Repair_Orders.closed_at > '2021-07-18')
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Calculates the daily labor per repair order', 'SCHEMA', N'dbo', 'VIEW', N'vw_DailySalesDetailLabor', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

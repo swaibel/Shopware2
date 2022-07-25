@@ -12,3 +12,5 @@ CREATE TABLE [dbo].[RO_Inspections]
 GO
 ALTER TABLE [dbo].[RO_Inspections] ADD CONSTRAINT [PK__RO_Inspe__3213E83FE3F65E00] PRIMARY KEY CLUSTERED ([id]) ON [PRIMARY]
 GO
+ALTER TABLE [dbo].[RO_Inspections] ADD CONSTRAINT [FK_RO_Inspections_RO_Services] FOREIGN KEY ([P_results_services_id]) REFERENCES [dbo].[RO_Services] ([id])
+GO

@@ -14,6 +14,9 @@ FROM            dbo.RO_Repair_Orders INNER JOIN
                          dbo.Shops ON dbo.RO_Repair_Orders.shop_id = dbo.Shops.id INNER JOIN
                          dbo.Staff ON dbo.RO_Labors.technician_id = dbo.Staff.id
 WHERE        (dbo.RO_Labors.technician_id IS NOT NULL) AND (dbo.RO_Labors.hours <> 0) AND (dbo.RO_Repair_Orders.closed_at > '2021-07-18') AND (dbo.RO_Repair_Orders.number < 999999)
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Gets the labor detail for importing into Middleware tblLabor', 'SCHEMA', N'dbo', 'VIEW', N'vw_tblLabor', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

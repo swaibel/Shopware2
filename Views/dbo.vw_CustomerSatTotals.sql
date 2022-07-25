@@ -6,6 +6,9 @@ CREATE VIEW [dbo].[vw_CustomerSatTotals]
 AS
 SELECT        id AS P_results_id, 0 AS CustomerSat
 FROM            dbo.RO_Repair_Orders
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'May not be needed anymore', 'SCHEMA', N'dbo', 'VIEW', N'vw_CustomerSatTotals', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

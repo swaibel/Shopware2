@@ -13,6 +13,9 @@ FROM            dbo.RO_Repair_Orders INNER JOIN
                          dbo.Shops ON dbo.RO_Repair_Orders.shop_id = dbo.Shops.id LEFT OUTER JOIN
                          dbo.Customers ON dbo.RO_Repair_Orders.customer_id = dbo.Customers.id
 WHERE        (dbo.RO_Repair_Orders.state <> 'invoice') AND (dbo.vw_ROPayments.PaymentDate >= GETDATE() - 30)
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Get pre-payments made on a RO', 'SCHEMA', N'dbo', 'VIEW', N'vw_PaymentsBeforeInvoice', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

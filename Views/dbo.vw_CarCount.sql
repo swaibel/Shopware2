@@ -7,6 +7,9 @@ AS
 SELECT        ClosedDate, COUNT(RONumber) AS CarCount, shop_id
 FROM            dbo.vw_CarCountSetup
 GROUP BY shop_id, ClosedDate
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Calculates the car count per day per shop', 'SCHEMA', N'dbo', 'VIEW', N'vw_CarCount', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

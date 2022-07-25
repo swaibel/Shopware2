@@ -13,3 +13,5 @@ CREATE TABLE [dbo].[RO_Labors]
 GO
 ALTER TABLE [dbo].[RO_Labors] ADD CONSTRAINT [PK__RO_Labor__3213E83F97B27371] PRIMARY KEY CLUSTERED ([id]) ON [PRIMARY]
 GO
+ALTER TABLE [dbo].[RO_Labors] ADD CONSTRAINT [FK_RO_Labors_RO_Services] FOREIGN KEY ([P_results_services_id]) REFERENCES [dbo].[RO_Services] ([id])
+GO

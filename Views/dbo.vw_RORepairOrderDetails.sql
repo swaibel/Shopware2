@@ -10,6 +10,9 @@ SELECT        dbo.RO_Repair_Orders.id, dbo.Shops.identifier AS shop_id, dbo.RO_R
                          dbo.RO_Repair_Orders.labor_tax_rate, dbo.RO_Repair_Orders.hazmat_tax_rate, dbo.RO_Repair_Orders.sublet_tax_rate
 FROM            dbo.RO_Repair_Orders INNER JOIN
                          dbo.Shops ON dbo.RO_Repair_Orders.shop_id = dbo.Shops.id
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Gets RO header details', 'SCHEMA', N'dbo', 'VIEW', N'vw_RORepairOrderDetails', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

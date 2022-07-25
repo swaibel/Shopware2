@@ -7,6 +7,9 @@ AS
 SELECT        shop_id, CreatedDate, payment_type, SUM(PaymentAmount) AS TotalAmt
 FROM            dbo.vw_PaymentsDetails
 GROUP BY shop_id, CreatedDate, payment_type
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Total of payment type by date / store', 'SCHEMA', N'dbo', 'VIEW', N'vw_DailyPayments', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

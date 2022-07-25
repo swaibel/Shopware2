@@ -6,6 +6,9 @@ CREATE VIEW [dbo].[vw_DiscountTotals]
 AS
 SELECT        id AS P_results_id, ISNULL(labor_discount_cents * 1.0 / 100, 0) * - 1 + ISNULL(part_discount_cents * 1.0 / 100, 0) * - 1 AS discounts
 FROM            dbo.RO_Repair_Orders
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Calculates the parts and labor discounts totals per RO', 'SCHEMA', N'dbo', 'VIEW', N'vw_DiscountTotals', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

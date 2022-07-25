@@ -19,6 +19,9 @@ SELECT        id AS P_results_id, CASE WHEN substring(CONVERT(varchar(10), DATEA
                          = '07' THEN '7' WHEN substring(CONVERT(varchar(10), DATEADD(hour, - 7, dbo.RO_Repair_Orders.closed_at), 120), 9, 2) = '08' THEN '8' WHEN substring(CONVERT(varchar(10), DATEADD(hour, - 7, 
                          dbo.RO_Repair_Orders.closed_at), 120), 9, 2) = '09' THEN '9' ELSE substring(CONVERT(varchar(10), DATEADD(hour, - 7, dbo.RO_Repair_Orders.closed_at), 120), 9, 2) END AS dayPart, LEFT(closed_at, 4) AS yearpart
 FROM            dbo.RO_Repair_Orders
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'No longer needed', 'SCHEMA', N'dbo', 'VIEW', N'vw_ARInvParseDate', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

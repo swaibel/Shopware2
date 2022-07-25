@@ -18,3 +18,5 @@ CREATE TABLE [dbo].[RO_Sublets]
 GO
 ALTER TABLE [dbo].[RO_Sublets] ADD CONSTRAINT [PK__RO_Suble__3213E83F76077606] PRIMARY KEY CLUSTERED ([id]) ON [PRIMARY]
 GO
+ALTER TABLE [dbo].[RO_Sublets] ADD CONSTRAINT [FK_RO_Sublets_RO_Services] FOREIGN KEY ([P_results_services_id]) REFERENCES [dbo].[RO_Services] ([id])
+GO

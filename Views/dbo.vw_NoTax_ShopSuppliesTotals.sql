@@ -8,6 +8,9 @@ SELECT        shop_id, ClosedDate, ISNULL(SUM(NonTaxed), 0) AS NonTaxed
 FROM            dbo.vw_NoTax_ShopSupplies
 WHERE        (ClosedDate IS NOT NULL)
 GROUP BY shop_id, ClosedDate
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Totals Shop Supplies not taxed', 'SCHEMA', N'dbo', 'VIEW', N'vw_NoTax_ShopSuppliesTotals', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

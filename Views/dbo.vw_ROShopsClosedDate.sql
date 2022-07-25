@@ -7,6 +7,9 @@ AS
 SELECT        ClosedDate, shop_id
 FROM            dbo.vw_RORepairOrders
 GROUP BY ClosedDate, shop_id
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Gets the closed date and shop_id. Not needed?', 'SCHEMA', N'dbo', 'VIEW', N'vw_ROShopsClosedDate', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

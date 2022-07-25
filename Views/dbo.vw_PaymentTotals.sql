@@ -7,6 +7,9 @@ AS
 SELECT        p_results_id, payment_type, SUM(PaymentAmount) AS Total
 FROM            dbo.vw_Payments
 GROUP BY p_results_id, payment_type
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Totals the payments by RO ID', 'SCHEMA', N'dbo', 'VIEW', N'vw_PaymentTotals', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

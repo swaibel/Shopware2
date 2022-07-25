@@ -7,6 +7,9 @@ AS
 SELECT        ClosedDate, shop_id, SUM(PartDiscountDollars) AS PartDiscNonTax, SUM(LaborDiscountDollars) AS LaborDiscNonTax
 FROM            dbo.vw_NoTax_Discounts
 GROUP BY shop_id, ClosedDate
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Totals discounts not taxed', 'SCHEMA', N'dbo', 'VIEW', N'vw_NoTax_DiscountsTotals', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

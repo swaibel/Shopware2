@@ -8,6 +8,9 @@ SELECT        RONumber, SUM(PaymentDollars) AS TotalPaidAfterClosedDate
 FROM            dbo.vw_ROPayments
 WHERE        (PaymentDate > ClosedDate)
 GROUP BY RONumber
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Gets payments not made on closed date', 'SCHEMA', N'dbo', 'VIEW', N'vw_ROPaidAfterClosedDate', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

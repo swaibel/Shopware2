@@ -7,6 +7,9 @@ AS
 SELECT        RONumber, PaymentDate, SUM(PaymentAmount) AS DailyPaymentTotal
 FROM            dbo.vw_Payments
 GROUP BY RONumber, PaymentDate
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Totals payments by RO and payment date', 'SCHEMA', N'dbo', 'VIEW', N'vw_ROPaymentDailyTotals', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

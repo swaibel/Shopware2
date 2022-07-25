@@ -8,6 +8,9 @@ SELECT        CONVERT(varchar(10), CAST(ClosedDate AS date), 101) AS ClosedDate,
 FROM            dbo.vw_TechHours
 WHERE        (ClosedDate > '2021-07-18')
 GROUP BY ClosedDate, TechCode, shop_id, first_name, last_name
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Totals tech hours for each tech by closed date', 'SCHEMA', N'dbo', 'VIEW', N'vw_TechHoursReport', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

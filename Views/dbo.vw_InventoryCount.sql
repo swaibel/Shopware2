@@ -8,6 +8,9 @@ SELECT        TOP (100) PERCENT location, number AS Part#, description, quantity
 FROM            dbo.Inventory
 WHERE        (min_stock > 0)
 ORDER BY location, Part#
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Show qty on hand - Not needed?', 'SCHEMA', N'dbo', 'VIEW', N'vw_InventoryCount', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

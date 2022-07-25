@@ -7,6 +7,9 @@ AS
 SELECT        dbo.RO_Repair_Orders.id, dbo.RO_Repair_Orders.number AS RONumber, CONVERT(varchar(10), DATEADD(hour, - 7, dbo.RO_Repair_Orders.closed_at), 120) AS ClosedDate, dbo.Shops.identifier AS shop_id
 FROM            dbo.RO_Repair_Orders INNER JOIN
                          dbo.Shops ON dbo.RO_Repair_Orders.shop_id = dbo.Shops.id
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Gets the RO Header to link to other views', 'SCHEMA', N'dbo', 'VIEW', N'vw_RORepairOrders', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

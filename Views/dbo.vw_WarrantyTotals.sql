@@ -10,6 +10,9 @@ FROM            dbo.Shops INNER JOIN
                          dbo.Payments ON dbo.RO_Repair_Orders.id = dbo.Payments.repair_order_id
 WHERE        (dbo.Payments.payment_type = 'Other - Warranty')
 GROUP BY dbo.Payments.repair_order_id
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'No Needed', 'SCHEMA', N'dbo', 'VIEW', N'vw_WarrantyTotals', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

@@ -7,6 +7,9 @@ AS
 SELECT        RONumber, SUM(PaymentAmount) AS TotalPaid
 FROM            dbo.vw_Payments
 GROUP BY RONumber
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Totals the payments by RO ', 'SCHEMA', N'dbo', 'VIEW', N'vw_PaymentTotalsByRO', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

@@ -13,6 +13,9 @@ FROM            dbo.RO_Repair_Orders INNER JOIN
                          dbo.RO_Parts ON dbo.RO_Services.id = dbo.RO_Parts.P_results_services_id INNER JOIN
                          dbo.Shops ON dbo.RO_Repair_Orders.shop_id = dbo.Shops.id
 WHERE        (dbo.RO_Repair_Orders.closed_at IS NOT NULL)
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Finds Parts not taxed', 'SCHEMA', N'dbo', 'VIEW', N'vw_NoTax_Parts', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

@@ -8,6 +8,9 @@ SELECT        dbo.RO_Repair_Orders.id, dbo.RO_Repair_Orders.number AS RONumber, 
                          dbo.RO_Services.canned_job_id
 FROM            dbo.RO_Repair_Orders INNER JOIN
                          dbo.RO_Services ON dbo.RO_Repair_Orders.id = dbo.RO_Services.P_results_id
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Gets the services by RO ID', 'SCHEMA', N'dbo', 'VIEW', N'vw_ROServices', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

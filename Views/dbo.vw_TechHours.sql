@@ -14,6 +14,9 @@ FROM            dbo.RO_Repair_Orders INNER JOIN
                          dbo.Staff ON dbo.RO_Labors.technician_id = dbo.Staff.id
 WHERE        (dbo.RO_Labors.technician_id IS NOT NULL) AND (dbo.RO_Repair_Orders.closed_at IS NOT NULL) AND (CONVERT(varchar(10), DATEADD(hour, - 7, dbo.RO_Repair_Orders.closed_at), 120) > '2021-07-18') AND 
                          (dbo.RO_Labors.hours > 0)
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Calculates the tech hours for each labor line', 'SCHEMA', N'dbo', 'VIEW', N'vw_TechHours', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

@@ -12,6 +12,9 @@ FROM            dbo.vw_Payments INNER JOIN
                          dbo.RO_Repair_Orders ON dbo.vw_Payments.RONumber = dbo.RO_Repair_Orders.number LEFT OUTER JOIN
                          dbo.Customers ON dbo.RO_Repair_Orders.customer_id = dbo.Customers.id
 WHERE        (dbo.vw_Payments.PaymentDate >= GETDATE() - 30)
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Gets payments that were not on the RO closed date. Used for Daily Process', 'SCHEMA', N'dbo', 'VIEW', N'vw_PaymentNotOnClosedDate', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

@@ -9,6 +9,9 @@ SELECT        dbo.Payments.repair_order_id AS p_results_id, CONVERT(varchar(10),
 FROM            dbo.Shops INNER JOIN
                          dbo.RO_Repair_Orders ON dbo.Shops.id = dbo.RO_Repair_Orders.shop_id RIGHT OUTER JOIN
                          dbo.Payments ON dbo.RO_Repair_Orders.id = dbo.Payments.repair_order_id
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Gets all the payments for a RO', 'SCHEMA', N'dbo', 'VIEW', N'vw_Payments', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 

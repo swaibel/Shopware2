@@ -8,6 +8,9 @@ SELECT        dbo.Customers.id AS CustID, dbo.Customers.first_name, dbo.Customer
 FROM            dbo.Customers INNER JOIN
                          dbo.RO_Repair_Orders ON dbo.Customers.id = dbo.RO_Repair_Orders.customer_id INNER JOIN
                          dbo.Shops ON dbo.RO_Repair_Orders.shop_id = dbo.Shops.id
+
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Gets AR repair orders', 'SCHEMA', N'dbo', 'VIEW', N'vw_CustomerRO', NULL, NULL
 GO
 EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
