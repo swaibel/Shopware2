@@ -11,5 +11,7 @@ CREATE TABLE [dbo].[RO_Hazmats]
 [quantity] [float] NULL
 ) ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[RO_Hazmats] ADD CONSTRAINT [FK_RO_Hazmats_RO_Services] FOREIGN KEY ([P_results_services_id]) REFERENCES [dbo].[RO_Services] ([id])
+ALTER TABLE [dbo].[RO_Hazmats] ADD CONSTRAINT [PK_RO_Hazmats] PRIMARY KEY CLUSTERED ([id]) ON [PRIMARY]
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Repair Orders Hazmats table from the API', 'SCHEMA', N'dbo', 'TABLE', N'RO_Hazmats', NULL, NULL
 GO

@@ -17,5 +17,5 @@ CREATE TABLE [dbo].[RO_Parts]
 GO
 ALTER TABLE [dbo].[RO_Parts] ADD CONSTRAINT [PK_RO_Parts] PRIMARY KEY CLUSTERED ([id]) ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[RO_Parts] ADD CONSTRAINT [FK_RO_Parts_RO_Services] FOREIGN KEY ([P_results_services_id]) REFERENCES [dbo].[RO_Services] ([id])
+EXEC sp_addextendedproperty N'MS_Description', N'Repair Orders Parts table from the API', 'SCHEMA', N'dbo', 'TABLE', N'RO_Parts', NULL, NULL
 GO

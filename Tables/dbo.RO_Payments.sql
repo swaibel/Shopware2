@@ -11,5 +11,7 @@ CREATE TABLE [dbo].[RO_Payments]
 [amount_cents] [int] NULL
 ) ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[RO_Payments] ADD CONSTRAINT [PK_RO_Payments] PRIMARY KEY CLUSTERED ([id]) ON [PRIMARY]
+ALTER TABLE [dbo].[RO_Payments] ADD CONSTRAINT [PK__RO_Payme__3213E83F572B8CF2] PRIMARY KEY CLUSTERED ([id]) ON [PRIMARY]
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Repair Orders Payments table from the API', 'SCHEMA', N'dbo', 'TABLE', N'RO_Payments', NULL, NULL
 GO

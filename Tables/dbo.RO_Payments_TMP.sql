@@ -11,3 +11,5 @@ CREATE TABLE [dbo].[RO_Payments_TMP]
 [amount_cents] [int] NULL
 ) ON [PRIMARY]
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'Repair Orders Payments Temp table from the API', 'SCHEMA', N'dbo', 'TABLE', N'RO_Payments_TMP', NULL, NULL
+GO

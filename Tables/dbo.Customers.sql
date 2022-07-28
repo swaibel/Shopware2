@@ -6,7 +6,7 @@ CREATE TABLE [dbo].[Customers]
 [first_name] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [last_name] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [phone] [nvarchar] (80) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[detail] [nvarchar] (1000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[detail] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [address] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [city] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [state] [nvarchar] (80) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
@@ -16,5 +16,7 @@ CREATE TABLE [dbo].[Customers]
 [email] [nvarchar] (124) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 ) ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[Customers] ADD CONSTRAINT [PK__Customer__3213E83FCCAE2D97] PRIMARY KEY CLUSTERED ([id]) ON [PRIMARY]
+ALTER TABLE [dbo].[Customers] ADD CONSTRAINT [PK__Customer__3213E83FC140AF5B] PRIMARY KEY CLUSTERED ([id]) ON [PRIMARY]
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Customer table from the API', 'SCHEMA', N'dbo', 'TABLE', N'Customers', NULL, NULL
 GO

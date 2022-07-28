@@ -11,7 +11,7 @@ CREATE TABLE [dbo].[RO_Repair_Orders]
 [technician_id] [int] NULL,
 [advisor_id] [int] NULL,
 [vehicle_id] [int] NULL,
-[detail] [nvarchar] (848) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[detail] [nvarchar] (1500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [preferred_contact_type] [nvarchar] (80) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [part_discount_cents] [int] NULL,
 [labor_discount_cents] [int] NULL,
@@ -31,13 +31,10 @@ CREATE TABLE [dbo].[RO_Repair_Orders]
 [labor_tax_rate] [float] NULL,
 [hazmat_tax_rate] [float] NULL,
 [sublet_tax_rate] [float] NULL,
-[label] [nvarchar] (1020) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[DrawerDate_v] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[DrawerDate_d] [date] NULL,
-[closed_at_2] [datetimeoffset] NULL,
-[closed_at3] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[closed_at5] [datetime] NULL
+[label] [nvarchar] (1020) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 ) ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[RO_Repair_Orders] ADD CONSTRAINT [PK_RO_Repair_Orders] PRIMARY KEY CLUSTERED ([id]) ON [PRIMARY]
+ALTER TABLE [dbo].[RO_Repair_Orders] ADD CONSTRAINT [PK__RO_Repai__3213E83F06710CE5] PRIMARY KEY CLUSTERED ([id]) ON [PRIMARY]
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Repair Orders HDR table from the API', 'SCHEMA', N'dbo', 'TABLE', N'RO_Repair_Orders', NULL, NULL
 GO
